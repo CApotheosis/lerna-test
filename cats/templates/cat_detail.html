@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<main>
+  <div class="cat-container">
+    <div class="cat-container-data">
+      <img src="{{ url_for('static', filename='images/metis.jpg') }}" alt="Metis" />
+      <div class="cat-info">
+        <h2>Name: {{ cat.name }}</h2>
+        <p>{{ cat.description }}</p>
+        <span><strong>Breed:</strong> {{ cat.breed }}</span> |
+        <span><strong>Age by month:</strong> {{ cat.age_by_month }}</span>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

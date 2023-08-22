@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block content %}
+<main>
+  <section class="search">
+    <form action="" method="get" class="search-form">
+      {{ search_form.hidden_tag() }}
+      {{ search_form.search(class_="search-input") }}
+      {{ search_form.submit(class_="search-submit") }}
+    </form>
+  </section>
+  <section class="sorting"></section>
+  <div class="container">
+    {% for cat in cats %}
+    <div class="container-item">
+      <img
+        src="{{ url_for('static', filename='images/metis.jpg') }}"
+        alt="Metis"
+      />
+      <div class="container-item--info">
+        <h2>
+          <a href="{{ url_for('cat_detail', id=cat.id) }}" target="_blank"
+            >{{ cat.name }}</a
+          >
+        </h2>
+        <p>{{ cat.description }}</p>
+        <span>Breed: {{ cat.breed }}</span> |
+        <span>Age: {{ cat.age_by_month }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="pagination">
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer cats</a>
+    {% endif %} {% if next_url %}
+    <a href="{{ next_url }}">Older cats</a>
+    {% endif %}
+  </div>
+</main>
+{% endblock %}

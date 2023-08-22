@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <title>Cat world</title>
+  </head>
+  <body>
+    <!-- <nav>
+      <ul>
+        <li><a href="">Navigation</a></li>
+        <li><a href="">Navigation</a></li>
+        <li><a href="">Navigation</a></li>
+      </ul>
+    </nav> -->
+    {% block content %} {% endblock %}
+    <!-- <footer>
+      <div class="footer-container">
+        <ul>
+          <li><a href="#">Some Cat Info</a></li>
+          <li><a href="#">Some Cat Info</a></li>
+          <li><a href="#">Some Cat Info</a></li>
+          <li><a href="#">Some Cat Info</a></li>
+          <li><a href="#">Some Cat Info</a></li>
+        </ul>
+      </div>
+    </footer> -->
+  </body>
+</html>
